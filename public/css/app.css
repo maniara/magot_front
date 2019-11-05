@@ -1,0 +1,70 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    letter-spacing: 0;
+}
+
+#mainNav{
+background-color:#ff496e;
+height:50px;
+}
+
+#nav {
+height:50px;
+font-weight: bold;
+background-color:#ff496e;
+}
+
+#nav a.router-link-exact-active {
+color: #000;
+}
+
+
+input[type="text"], input[type="email"], input[type="password"]{
+/*max-width:300px;*/
+max-width:300px;
+height:45px;
+font-size:17px;
+}
+
+
+.btn-file{
+    background-color:#bbb !important;
+    width:115px !important;
+}
+
+
+.btn{
+    width:150px;
+    height:40px;
+    padding:0.65rem 1.6rem !important;
+    font-weight:bold;
+    letter-spacing: 0;
+    font-size:15px;
+    background-color:#1E3444;
+}
+
+.prev-btn{
+    background:#fff;
+    color:#1E3444 !important;
+    border: 1px solid #1E3444;
+}
+
+.next-btn{
+    margin-left:20px;
+}
+
+.form-group{
+    margin-bottom:30px;
+  }
+
+@media (min-width: 576px){
+    .col-sm-3 {
+        max-width: 23%;
+    }
+}
+ 
+
+
