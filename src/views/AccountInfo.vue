@@ -49,7 +49,7 @@
           <div class="form-group row">
               <div class="col-sm">
               <router-link to="/payment" class="btn prev-btn">이전</router-link>    
-              <router-link to="/passwordReset" class="btn next-btn">다음</router-link>
+              <router-link to="/myToken" class="btn next-btn">다음</router-link>
               </div>
           </div>
         </div>

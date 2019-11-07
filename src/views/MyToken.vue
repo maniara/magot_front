@@ -10,13 +10,6 @@
               <p>가게의 상호와 이미지에 맞는 내용을 선택해 주세요.</p>
           </div>
 
-          <!-- 토큰 오너 입력-->
-          <div class="form-group row">
-              <label for="tokenOwner" class="col-sm-3 control-label">토큰 오너</label>
-              <div class="col-sm-8">
-                  <input type="text" class="form-control token-owner" placeholder="토큰 오너">
-              </div>            
-          </div>
           <!-- 토큰 이름 입력-->
           <div class="form-group row">
               <label for="tokenName" class="col-sm-3 control-label">토큰 이름</label>
@@ -31,19 +24,12 @@
                   <input type="text" class="form-control token-symbol" placeholder="토큰 심볼(악자)">
               </div>            
           </div>
-          <!-- 토큰 심볼 이미지 업롣드-->
-          <div class="form-group row">
-              <label for="" class="col-sm-3 control-label">토큰 심볼 이미지</label>
-              <div class="col-sm-8">
-                  <button type="button" class="btn btn-file">파일 선택</button>
-                </div>         
-          </div>
 
            <!-- 버튼 -->
           <div class="form-group row">
               <div class="col-sm">
               <router-link to="/payment" class="btn prev-btn">이전</router-link>    
-              <router-link to="/accountInfo" class="btn next-btn">다음</router-link>
+              <router-link to="/" class="btn next-btn">발행하기</router-link>
               </div>
           </div>
 

@@ -8,13 +8,24 @@ import MemberInfo from '../views/MemberInfo.vue'
 import AccountInfo from '../views/AccountInfo.vue'
 import PasswordReset from '../views/PasswordReset.vue'
 import PasswordChange from '../views/PasswordChange.vue'
+import Payment from '../views/Payment.vue'
+import Menu from '../components/Nav.vue'
+import Footer from '../components/Footer.vue'
+import Admin from '../views/Admin.vue'
+import Admin2 from '../views/Admin2.vue'
+import Admin3 from '../views/Admin3.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    components: { 
+      default: Home,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path: '/about',
@@ -32,42 +43,97 @@ const routes = [
   {
     path: '/payment',
     name: 'payment',
-    component: () => import('../views/Payment.vue')
+    components: { 
+      default: Payment,
+      nav: Menu,
+      footer: Footer
+    }
   },
   { 
     path: '/signup',
     name: 'signup',
-    component: Signup
+    components: { 
+      default: Signup,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path: '/memberInfo',
     name: 'memberinfo',
-    component: MemberInfo
+    components: { 
+      default: MemberInfo,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    components: { 
+      default: Login,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path:'/mytoken',
     name: 'mytoken',
-    component: MyToken
+    components: { 
+      default: MyToken,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path:'/accountInfo',
     name: 'accountInfo',
-    component: AccountInfo
+    components: { 
+      default: AccountInfo,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
-    path:'/PasswordReset',
+    path:'/passwordReset',
     name: 'passwordReset',
-    component: PasswordReset
+    components: { 
+      default: PasswordReset,
+      nav: Menu,
+      footer: Footer
+    }
   },
   {
     path:'/passwordChange',
     name: 'passwordChange',
-    component: PasswordChange
+    components: { 
+      default: PasswordChange,
+      nav: Menu,
+      footer: Footer
+    }
+  },
+  {
+    path:'/admin',
+    name:'admin',
+    components: { 
+      default: Admin,
+      /*nav: AdminMenu
+      leftMenu:LeftMenu*/
+    }
+  },
+  {
+    path:'/admin2',
+    name:'admin2',
+    components: { 
+      default: Admin2,
+    }
+  },
+  {
+    path:'/admin3',
+    name:'admin3',
+    components: { 
+      default: Admin3,
+    }
   }
 ]
 

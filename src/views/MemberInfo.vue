@@ -12,13 +12,6 @@
                   <input type="text" class="form-control" placeholder="업체명 입력">
                 </div>
               </div>
-              <!-- 사업자명 -->
-              <div class="form-group row">
-                <label for="" class="col-sm-3 control-label">사업자명</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="사업자명 입력">
-                </div>
-              </div>
 
               <!-- 대표자명 -->
               <div class="form-group row">
@@ -60,6 +53,14 @@
                 </div>
               </div>
 
+              <!-- 매장명 -->
+              <div class="form-group row">
+                <label for="" class="col-sm-3 control-label">매장명</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="매장명 입력">
+                </div>
+              </div>
+              
               <!-- 매장 주소 -->
               <div class="form-group row">
                 <label for="" class="col-sm-3 control-label">매장 주소</label>
