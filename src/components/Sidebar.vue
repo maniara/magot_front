@@ -2,7 +2,7 @@
   <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Magot</h3>
+                <h3><router-link to="/"> Magot</router-link></h3>
             </div>
             <ul class="list-unstyled components">
                 <!-- <p>나의 서비스 관리</p> -->

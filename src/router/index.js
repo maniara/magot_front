@@ -14,6 +14,7 @@ import Footer from '../components/Footer.vue'
 import Admin from '../views/Admin.vue'
 import Admin2 from '../views/Admin2.vue'
 import Admin3 from '../views/Admin3.vue'
+import Admin4 from '../views/Admin4.vue'
 
 Vue.use(VueRouter)
 
@@ -133,6 +134,12 @@ const routes = [
     name:'admin3',
     components: { 
       default: Admin3,
+    }
+  },{
+    path:'/admin4',
+    name:'admin4',
+    components: {
+      default: Admin4,
     }
   }
 ]

@@ -12,15 +12,15 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">1:1 문의</a>
+                <ul class="nav navbar-nav ml-auto admin-nav">
+                    <li class="nav-item" style="width:150px;">
+                        <a class="nav-link" href="#" style="color:#000;">1:1 문의</a>
+                    </li>
+                    <li class="nav-item" style="width:150px">
+                        <a class="nav-link" href="#" >로그아웃</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">로그아웃</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Woody</a>
+                        <a class="nav-link" href="#" >Woody@magot.com</a>
                     </li>
                 </ul>
             </div>
@@ -35,5 +35,8 @@ export default {
 </script>
 
 <style>
-
+.admin-nav > .nav-item > a{
+    color:#000 !important;
+    display: inline;
+}
 </style>

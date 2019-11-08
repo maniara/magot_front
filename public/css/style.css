@@ -28,8 +28,7 @@ a:focus {
     background: #fff;
     border: none;
     border-radius: 0;
-    margin-bottom: 17px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .navbar-btn {
@@ -56,9 +55,10 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #ffffff;
+    padding-left:20px;
+    min-width: 270px;
+    max-width: 270px;
+    /*background: #ffffff;*/
     color: #000000;
     transition: all 0.3s;
 }
@@ -75,6 +75,8 @@ a:focus {
 #sidebar ul.components {
     /*padding: 20px 0;
     border-bottom: 1px solid #47748b;*/
+    border: 1px solid #979797;
+    box-shadow: 0px 0px 2px 0px;
 }
 
 #sidebar ul p {
@@ -83,22 +85,23 @@ a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: 16px;
     font-size: 19px;
     display: block;
+    background:#ffffff;
 }
 
 #sidebar ul li a:hover {
     color: #fff;
     background: #1E3444;
-    /*opacity: 30%;*/
+    opacity: 30%;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #1E3444;
-    /*opacity: 30%;*/
+    background: #1E3444 !important;
+    opacity: 30%;
 }
 
 a[data-toggle="collapse"] {
@@ -159,7 +162,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -270px;
     }
     #sidebar.active {
         margin-left: 0;

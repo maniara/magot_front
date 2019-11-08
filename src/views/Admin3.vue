@@ -14,61 +14,55 @@
         </div>
         
         <div class="line"></div>
-
         <div class="form-group">
-            <h6 class="title-2">고객 정보 및 결제 내역</h6>
+            <h6 class="title-2">총량 현황</h6>
+            <div class="card">
+                <div class="card-body">
+                    <div style="width:50px;height:100px;background:red;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <h6 class="title-3">토큰 충전 내용</h6>
             <table class="table table-white text-center table-border-style">
                 <thead>
                     <tr>
+                        <th scope="col">일자</th>
                         <th scope="col">사용자ID</th>
-                        <th scope="col">가입일시</th>
-                        <th scope="col">총 충전금액</th>
-                        <th scope="col">현재 보유금액</th>
-                        <th scope="col">사용 금액</th>
-                        <th scope="col">사용 내역</th>
-                        
+                        <th scope="col">총 충전금액(사용량)</th>
+                        <th scope="col">결제 상태</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>010-1234-5678</td>
                         <td>2019-10-10</td>
+                        <td>010-1234-5678</td>
                         <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td><u>보기</u></td>
+                        <td>정상</td>
                     </tr>
                     <tr>
-                        <td>010-1234-5678</td>
                         <td>2019-10-10</td>
+                        <td>010-1234-5678</td>
                         <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td><u>보기</u></td>
+                        <td>정상</td>
                     </tr>
                     <tr>
-                        <td>010-1234-5678</td>
                         <td>2019-10-10</td>
+                        <td>010-1234-5678</td>
                         <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td><u>보기</u></td>
+                        <td>정상</td>
                     </tr>
                     <tr>
-                        <td>010-1234-5678</td>
                         <td>2019-10-10</td>
+                        <td>010-1234-5678</td>
                         <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td><u>보기</u></td>
+                        <td>정상</td>
                     </tr>
                     <tr>
-                        <td>010-1234-5678</td>
                         <td>2019-10-10</td>
+                        <td>010-1234-5678</td>
                         <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td>25,000원</td>
-                        <td><u>보기</u></td>
+                        <td>정상</td>
                     </tr>
                 </tbody>
             </table>

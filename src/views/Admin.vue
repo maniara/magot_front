@@ -158,8 +158,10 @@ export default {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
+.table td{
+    border-top-style: none;
+}
 .form-group{
     margin-bottom:20px;
 }
-
 </style>
