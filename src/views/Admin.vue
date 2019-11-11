@@ -9,14 +9,14 @@
         <!-- nav menu -->
         <nav-menu />
         
-        <div class="form-group">
+        <div class="admin-form-group">
             <h4 class="title-1">매출(토큰 사용량) 관리</h4>  
-            <p class="text-1">오로라/마곳의 가게 매출 정보를 알려 드려요</p>
+            <p style="margin-left:11px;">오로라/마곳의 가게 매출 정보를 알려 드려요</p>
         </div>
         
         <div class="line"></div>
         
-        <div class="form-group">
+        <div class="admin-form-group">
             <h6 class="title-2"><u>이전 매출 보기</u></h6>
             <div class="row">
                 <div class="col-sm-6">
@@ -127,9 +127,6 @@ export default {
 .title-1{
     margin-bottom:17px;
 }
-.text-1{
-    margin-left:11px;
-}
 .card, .card-body{
     border-radius: 10px;
     border:none;
@@ -161,7 +158,7 @@ export default {
 .table td{
     border-top-style: none;
 }
-.form-group{
+.admin-form-group{
     margin-bottom:20px;
 }
 </style>

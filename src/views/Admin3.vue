@@ -9,12 +9,12 @@
         <!-- nav menu -->
         <nav-menu />
         
-        <div class="form-group">
+        <div class="admin-form-group">
             <h4 class="title-1">토큰 현황</h4>  
         </div>
         
         <div class="line"></div>
-        <div class="form-group">
+        <div class="admin-form-group">
             <h6 class="title-2">총량 현황</h6>
             <div class="card">
                 <div class="card-body">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="admin-form-group">
             <h6 class="title-3">토큰 충전 내용</h6>
             <table class="table table-white text-center table-border-style">
                 <thead>

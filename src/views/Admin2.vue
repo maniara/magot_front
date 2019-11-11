@@ -15,7 +15,7 @@
         
         <div class="line"></div>
 
-        <div class="form-group">
+        <div class="admin-form-group">
             <h6 class="title-2">고객 정보 및 결제 내역</h6>
             <table class="table table-white text-center table-border-style">
                 <thead>

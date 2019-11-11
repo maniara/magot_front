@@ -78,6 +78,7 @@ export default {
   created() {
     //this.$store.commit("loginCheck");
   }
+  
 }
 </script>
 <style>
@@ -100,7 +101,7 @@ export default {
 }
 
 .home-section{
-padding: 71px 0px 71px 0px;
+padding: 71px 0px;
 background:#ff496e;
 }
 

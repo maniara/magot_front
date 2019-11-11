@@ -4,25 +4,26 @@
             
           <div class="card-body login-wrap">  
             <h1>Magot 로그인</h1>
-            <div class="form-group">
+
+            <div class="login-form-group">
                 <input type="email" class="form-control centered" v-model="email" placeholder="회원 ID(이메일)" >
             </div>
 
-            <div class="form-group">
+            <div class="login-form-group">
                 <input type="password" class="form-control centered" v-model="password" placeholder="비밀번호" maxlength="8"> 
             </div>
 
-            <div class="form-group">
+            <div class="login-form-group">
                 <router-link to="/passwordReset"><u>비밀번호를 잊어버리셨나요?</u></router-link>
 
                 <p id="errResponse">{{response}}</p>
             </div>
 
-            <div class="login-form-group">
+            <div class="login-button-form-group">
                 <button type="button" class="btn login-submit" @click="submitForm">로그인</button> 
             </div>
             
-            <div class="form-group">
+            <div class="login-form-group">
                 <p>아직 계정이 없으신가요?
                     <router-link to="/signup" class="join-link"><u>회원가입</u></router-link>
                 </p>
@@ -114,12 +115,11 @@ export default {
     margin: 0 auto;
     background-color:#f5f6f7;
 }
-
-.form-group{
+.login-form-group{
     margin-bottom:40px;
 }
 
-.login-form-group{
+.login-button-form-group{
     margin-bottom:20px;
 }
 .login-section{

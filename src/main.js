@@ -14,7 +14,7 @@ extend('required', {
 });
 
 Vue.component('ValidationProvider', ValidationProvider);
-
+Vue.component('foo-modal', VModal);
 new Vue({
   router,
   store,

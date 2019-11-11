@@ -9,12 +9,12 @@
         <!-- nav menu -->
         <nav-menu />
         
-        <div class="form-group">
+        <div class="admin-form-group">
             <h4 class="title-1">충전 관리</h4>  
         </div>
         
         <div class="line"></div>
-        <div class="form-group" style="margin-bottom:30px">
+        <div class="admin-form-group" style="margin-bottom:30px">
             <h6 class="title-2">충전 계좌 관리</h6>
             <div class="card" style="width:18rem;">
                 <div class="card-body account">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="admin-form-group">
             <h6 class="title-3 coupon">고객 충전 혜택(쿠폰)관리</h6>
             <p class="sub-title-3">고객의 충전 금액의 혜택을 추가하여 가게 마케팅 및 홍보에 활용하세요</p>
             <table class="table table-white text-center table-border-style">
@@ -90,7 +90,7 @@
             </table>
         </div>
 
-        <div class="form-group text-right">
+        <div class="admin-form-group text-right">
             <button type="button" class="btn">신규 혜택 등록</button>
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </div>
