@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-
+    아이디:{{user.id}}/{{user.nickname}}
   </div>
 </template>
 <script>
@@ -66,7 +66,7 @@ import { loginUser} from '../api'
 export default {
   data(){
     return {
-      email: '',
+      id: '',
       nickname: ''
     }
   },
@@ -76,7 +76,7 @@ export default {
     }
   },
   created() {
-    //this.$store.commit("loginCheck");
+    this.$store.commit("loginCheck");
   }
   
 }

@@ -90,8 +90,78 @@
             </table>
         </div>
 
+         <!-- use the modal component, pass in the prop -->
+        <modal v-if="showModal" @close="showModal = false">
+
+            <!-- modal header start -->
+            <h3 slot="header">
+            신규 혜택(쿠폰)등록
+            <i class="closeModalBtn fa fa-times" aria-hidden="true" @click="showModal = false" style="float:right;"></i>
+            </h3>
+            <!-- modal header end -->
+
+            <!-- modal body start -->
+            
+            <span slot="body">
+
+            <form class="was-validated" @submit.prevent="couponSubmit">
+                <div class="form-group row">
+                <label class="col-sm-3 control-label">제목</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control coupon-title" v-model="taxInfo.staff_name" placeholder="최초 충전 혜택" required>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                <label class="col-sm-3 control-label">내용</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control coupon-content" v-model="taxInfo.staff_phone" placeholder="최초 충전하는 분들에게 10% 더 드려요!" required>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                <label class="col-sm-3 control-label">충전 금액 조건</label>
+                <div class="col-sm-9">
+                    <label>{{price}}</label ><button type="button" class="btn btn-file">변경하기</button>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                <label class="col-sm-3 control-label">쿠폰 종류</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="1에서 100까지 입력 가능" required>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                <label class="col-sm-3 control-label"></label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="금액 입력 가능" required>
+                </div>
+                </div>
+
+
+                <div class="form-group row">
+                <label class="col-sm-3 control-label">혜택 기간 설정</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" v-model="taxInfo.company_name" placeholder="상호(법인명) 입력" required>
+                </div>
+                </div>
+
+                <div class="modal-footer-form row">
+                <div class="col-sm text-center">
+                    <button type="submit" class="btn">등록하기</button>       
+                </div>               
+                </div>
+
+            </form> 
+            </span>
+            <!-- modal body end -->
+        </modal>
+
+
         <div class="admin-form-group text-right">
-            <button type="button" class="btn">신규 혜택 등록</button>
+            <button type="button" id="showw-modal" class="btn" @click="showModal = true">신규 혜택 등록</button>
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </div>
     </div>
@@ -102,12 +172,42 @@
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import Nav from '../components/AdminNav.vue'
+import Modal from '../components/common/Modal'
+
 export default {
-    name: 'admin',
+
     components: {
         'sidebar-menu': Sidebar,
-        'nav-menu': Nav
+        'nav-menu': Nav,
+        Modal: Modal
+    },
+    data (){
+        return {
+            showModal: false,
+            taxInfo : 
+            {
+                member_id: 'woody', //회원 아이디
+                staff_name : '', //신청자 이름
+                staff_phone : '', //신청자 연락처
+                company_email : '', //회사 이메일
+                company_number : '', //회사 사업자등록번호
+                company_name : '', //회사 상호명
+                company_owner : '', //회사 대표자 이름
+                company_postcode : '', //회사 우편번호
+                company_address : '', //회사 주소
+                company_detail_address : '', //회사 상세주소
+            },
+            price : "10,000원 이상"
+        }
+    },
+    methods:{
+        //쿠폰 Modal POST
+        async couponSubmit(){
+            console.log('쿠폰정보 출력: '+this.taxInfo); //세금계산서 입력정보 출력
+        }
     }
+    
+
 }
 </script>
 
@@ -125,4 +225,17 @@ export default {
     font-size:15px;
     margin-left:10px;
 }
+
+.modal-header{
+    background-color:#1E3444;
+}
+
+.modal-body{
+    max-width:1000px;
+}
+
+.coupon-title, .coupon-content{
+    max-width:600px !important;
+}
+
 </style>

@@ -3,12 +3,11 @@
 <div class="wrapper">
     <!--sidebar menu -->
     <sidebar-menu />
-
     <!-- Page Content  -->
+
     <div id="content">
         <!-- nav menu -->
-        <nav-menu />
-        
+        <nav-menu/>
         <div class="admin-form-group">
             <h4 class="title-1">매출(토큰 사용량) 관리</h4>  
             <p style="margin-left:11px;">오로라/마곳의 가게 매출 정보를 알려 드려요</p>
@@ -49,55 +48,14 @@
                         <th scope="col">결제 상태</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
+                <tbody v-if=" dataReady == true">
+                    <tr v-for="(item,idx) in objectItems" v-bind:key="idx">
+                        <td>{{item.created_date}}</td>
+                        <td>{{item.member_id}}</td>
+                        <td>{{item.service_type}}</td>
                         <td>정상</td>
                     </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
-                    <tr>
-                        <td>2019-10-10</td>
-                        <td>010-1234-5678</td>
-                        <td>25,000원</td>
-                        <td>정상</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -109,12 +67,31 @@
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import Nav from '../components/AdminNav.vue'
+import {getMemberPaymentService} from '../api'
+
 export default {
+    
     name: 'admin',
     components: {
         'sidebar-menu': Sidebar,
-        'nav-menu': Nav
+        'nav-menu': Nav,
+    },
+    data (){
+        return {
+            dataReady: false,
+            objectItems : null
+        }
+    },
+    async mounted(){
+        var result = await getMemberPaymentService({
+            member_id : this.$store.state.user.nickname
+        });
+        //var status = result.data.status;
+        this.objectItems = result.data.data;
+        
+        this.dataReady = true;
     }
+    
 }
 </script>
 

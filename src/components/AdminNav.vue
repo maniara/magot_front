@@ -17,10 +17,12 @@
                         <a class="nav-link" href="#" style="color:#000;">1:1 문의</a>
                     </li>
                     <li class="nav-item" style="width:150px">
-                        <a class="nav-link" href="#" >로그아웃</a>
+                        <router-link to="/login" @click="logout">
+                            <span @click="logout">로그아웃</span>
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >Woody@magot.com</a>
+                        {{$store.state.user.id}}
                     </li>
                 </ul>
             </div>
@@ -30,7 +32,19 @@
 
 <script>
 export default {
-
+    data (){
+        return {
+            nickname : '123'
+        }
+    },
+    methods : {
+        logout(){
+            this.$store.commit('logout');
+        }
+    },
+    created() {
+        this.$store.commit("loginCheck");
+    },
 }
 </script>
 

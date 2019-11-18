@@ -21,7 +21,7 @@ export default new Vuex.Store({
     },
     logout: function(state){
       if(state.accessToken){
-        state.accessToken = '';
+        state.accessToken = null;
         alert("로그아웃되었습니다.");
       }
     },

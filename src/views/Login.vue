@@ -6,7 +6,7 @@
             <h1>Magot 로그인</h1>
 
             <div class="login-form-group">
-                <input type="email" class="form-control centered" v-model="email" placeholder="회원 ID(이메일)" >
+                <input type="text" class="form-control centered" v-model="id" placeholder="회원 ID" >
             </div>
 
             <div class="login-form-group">
@@ -32,31 +32,7 @@
 
         </div>
     </div>
-<!--
-  <div class="container">
-        <h1>Login</h1>
-        <form style="width:400px;margin:auto;margin-top:30px;text-align:left;" @submit.prevent="submitForm" > 
-            
-            <div class="form-group">
-                <label for="inputEmail">이메일 주소</label>
-                    <input type="email" class="form-control" v-model="email" placeholder="이메일을 입력하세요" >
-            </div>
 
-            <div class="form-group"> 
-                <label for="inputPassword">패스워드</label>
-                <input type="password" class="form-control" v-model="password" placeholder="패스워드를 입력하세요" > 
-            </div>
-            <button type="submit" class="btn btn-default">로그인</button>
-        </form>
-        <p id="errResponse">{{response}}</p>
-        
-        <validation-provider rules="required" v-slot="{ errors }">
-            <input v-model="value" name="myinput" type="text" />
-            <span>{{ errors[0] }}</span>
-        </validation-provider>
-
-    </div>
--->
 </template>
 
 <script>
@@ -66,7 +42,7 @@ export default {
     
     data() {
         return {
-            email: '',
+            id: '',
             password: '',
             response: '',
             value:'',
@@ -81,9 +57,8 @@ export default {
 
             console.log("로그인");
             
-
             var result = this.response = await loginUser({
-                email: this.email,
+                id: this.id,
                 password: this.password
             })
             var status = result.data.status;

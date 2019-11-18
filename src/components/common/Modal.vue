@@ -18,7 +18,7 @@
             </slot>
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-footer" style="display:none">
             <slot name="footer">
               default footer
               <button class="modal-default-button" @click="$emit('close')">
@@ -80,23 +80,35 @@
   margin-bottom:0;
   color: #ffffff;
   width:96%;
-
+  text-align: center;
 }
 
 .modal-body {
-  padding-left:50px;
+  /*padding-left:50px;
   margin: 20px 0px 0px 0px;
+  */
+  max-width:545px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:20px;
+  margin-bottom:0;
 }
 
 .modal-footer{
-    padding-left:50px;
+    /*padding-left:50px;
     justify-content:flex-start;
+    */
+    justify-content: center;
 }
 
 .modal-default-button {
   float: right;
 }
 
+.modal-footer-form{
+  margin-top: 40px;
+  margin-bottom:10px;
+}
 
 /*
  * The following styles are auto-applied to elements with
