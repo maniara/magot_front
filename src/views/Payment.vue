@@ -21,10 +21,12 @@
                         <h5 class="card-title">
                             <span class="text-1">가장 많이 선택하는</span>
                             <br/> 
-                            <span class="text-2">3% 수수료 요금제</span>
+                            <span class="text-2">후불 요금제</span>
                             <br/>
-                            <span class="text-3">결제 금액의 단 3% 수수료 서비스</span>
-                            <h6 class="text-price">월 59,000원</h6>
+                            <span class="text-3">적립 쿠폰 서비스 무료 (전자도장 구매 별도)</span><br/>
+                            <span class="text-3">선불 결제 금액의 3% 수수료</span><br/>
+                            <span class="text-3">마케팅 푸시 알람 건당 100원</span>
+                            <h6 class="text-price">후불결제</h6>
                         </h5>
                     </div>
                 </div>
@@ -32,12 +34,14 @@
                     <input type="radio" name="radio-stacked" @click="serviceSelect('payment-select-2')" v-bind:value="payment.service_type2" v-model="payment.service_selected" required>
                     <div class="card card-body payment-select-2" id="payment-select-2">
                         <h5 class="card-title">
-                            <span class="text-1">가장 부담없는</span>
+                            <span class="text-1">파워 스토어를 위한</span>
                             <br/> 
-                            <span class="text-2">2% 수수료 요금제</span>
+                            <span class="text-2">무제한 요금제</span>
                             <br/>
-                            <span class="text-3">결제 금액의 단 2% 수수료 서비스</span>
-                            <h6 class="text-price">월 99,000원</h6>
+                            <span class="text-3">적립 쿠폰 서비스 무료 (전자도장 구매 별도)</span><br/>
+                            <span class="text-3">선불 결제 서비스 수수료 없음</span><br/>
+                            <span class="text-3">마케팅 푸시 알람 무제한</span>
+                            <h6 class="text-price">월 55,000원<span class="text-3"> (VAT포함)</span></h6>
                         </h5>
                     </div>
                 </div>
@@ -92,12 +96,12 @@
             </div>
 
             <!-- 세금계산서 발급 신청-->
-            <div class="form-group row">
+            <!--div class="form-group row">
                 <label for="" class="col-sm-3 control-label">세금계산서 발급 신청</label>
                 <div class="col-sm">
                     <button type="button" id="showw-modal" class="btn btn-file" @click="showModal = true">양식작성</button>
                 </div>
-            </div>
+            </div-->
 
             <!-- 버튼 -->
             <div class="form-group row">
@@ -148,7 +152,7 @@
                 <div class="form-group row">
                 <label class="col-sm-5 control-label">사업자등록번호</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="사업자등록번호 입력" required>
+                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="사업자등록번호 입력(-제외)" required>
                 </div>
                 </div>
 
@@ -168,7 +172,7 @@
 
                 <!-- 매장 우편번호 찾기 -->
                 <div class="form-group row">
-                <label class="col-sm-5 control-label">매장 주소</label>
+                <label class="col-sm-5 control-label">사업장 소재지</label>
                 <div class="input-group col-sm">
                     <input type="text" class="form-control" id="company-postcode" v-model="taxInfo.company_postcode" placeholder="우편번호" required>
                     <div class="input-group-append">

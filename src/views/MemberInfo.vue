@@ -4,47 +4,27 @@
 
             <form class="memberInfo-form" @submit.prevent="memberInfoSubmit">
               
-              <h1>Magot 판매자 정보 입력하기</h1>
+              <h1>매장정보 입력하기</h1>
               
-              <!-- 업체명 -->
+              <!-- 매장명 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;상호명</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장명</label>
                 <div class="col-sm">
-                  <input type="text" class="form-control" id="company-name" v-model="memberInfo.company_name" placeholder="사업자등록증 상호명 입력" required>
+                  <input type="text" class="form-control" id="store-name" v-model="memberInfo.store_name" placeholder="매장명 입력" required>
                 </div>
               </div>
 
-              <!-- 사업자등록번호 -->
+              <!-- 지점명 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;사업자등록번호</label>
+                <label class="col-sm-5 control-label"><span class="text-danger"></span>&nbsp;지점명</label>
                 <div class="col-sm">
-                  <input type="text" class="form-control" id="company-number" v-model="memberInfo.company_number" placeholder="사업자등록번호 입력" required>
+                  <input type="text" class="form-control" id="store-name" v-model="memberInfo.store_name" placeholder="매장명 입력(선택)" required>
                 </div>
               </div>
-
-              <!-- 사업자등록증 사본 첨부 -->
-              <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;사업자등록증 사본 첨부</label>
-                <div class="col-sm">
-                  <input type="file" ref="file" class="business-file-input" id="business-file-input" style="display:none" @change="onFileChange">
-                  <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
-                  <span class="filename">{{memberInfo.business_file}}</span>
-                </div>
-              </div>
-
-              <!-- 대표자명 -->
-              <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;대표자명</label>
-                <div class="col-sm">
-                  <input type="text" class="form-control" id="member-name" v-model="memberInfo.company_owner" placeholder="사업자등록증 대표자명 입력" required>
-                </div>
-              </div>
-              
-             <hr style="margin-bottom:30px;">
 
               <!-- 연락처 1 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;회사 연락처 </label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 연락처 </label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="company-phone-1" v-model="memberInfo.company_phone1" placeholder="연락처 입력" required>
                 </div>
@@ -52,17 +32,9 @@
 
               <!-- 연락처 2 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">개인 연락처</label>
+                <label class="col-sm-5 control-label">대표자 연락처</label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="company-phone-2" v-model="memberInfo.company_phone2" placeholder="연락처 입력 (선택)">
-                </div>
-              </div>
-
-              <!-- 매장명 -->
-              <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장명</label>
-                <div class="col-sm">
-                  <input type="text" class="form-control" id="store-name" v-model="memberInfo.store_name" placeholder="매장명 입력" required>
                 </div>
               </div>
               
@@ -95,7 +67,7 @@
 
               <!-- 매장 로고 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 로고</label>
+                <label class="col-sm-5 control-label"><span class="text-danger"></span>&nbsp;매장 로고</label>
                 <div class="col-sm">
                   <input type="file" ref="file" style="display:none" @change="onFileChange">
                   <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
@@ -105,7 +77,7 @@
 
               <!-- 매장 사진-->
               <div class="form-group row">
-                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 사진</label>
+                <label class="col-sm-5 control-label"><span class="text-danger"></span>&nbsp;매장 사진</label>
                 <div class="col-sm">
                   <input type="file" ref="file" style="display:none" @change="onFileChange">
                   <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
@@ -117,7 +89,7 @@
               <div class="form-group row">
                 <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 검색 태그</label>
                 <div class="col-sm">
-                  <input type="text" class="form-control" id="store-tag" v-model="memberInfo.store_search_tag" placeholder="#태그입력" required>
+                  <input type="text" class="form-control" id="store-tag" v-model="memberInfo.store_search_tag" placeholder="#로맨스#홍대카페" required>
                 </div>
               </div>
 
