@@ -41,10 +41,8 @@ export default {
         logout(){
             this.$store.commit('logout');
         }
-    },
-    created() {
-        this.$store.commit("loginCheck");
-    },
+    }
+ 
 }
 </script>
 

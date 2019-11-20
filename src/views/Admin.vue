@@ -82,14 +82,21 @@ export default {
             objectItems : null
         }
     },
+    created() {
+       this.$store.commit("loginCheck");
+    },
     async mounted(){
-        var result = await getMemberPaymentService({
-            member_id : this.$store.state.user.nickname
-        });
-        //var status = result.data.status;
-        this.objectItems = result.data.data;
-        
-        this.dataReady = true;
+        console.log(this.$store.state.user);
+        try{   
+            var result = await getMemberPaymentService({
+                member_id : this.$store.state.user.nickname
+            });
+            //var status = result.data.status;
+            this.objectItems = result.data.data;
+            this.dataReady = true;
+        } catch (e) {
+            console.error(e);
+        }
     }
     
 }

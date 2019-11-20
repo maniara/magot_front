@@ -76,34 +76,14 @@ export default {
     }
   },
   created() {
-    this.$store.commit("loginCheck");
+    //this.$store.commit("loginCheck");
   }
   
 }
 </script>
 <style>
-*{
- font-family: 'Apple SD Gothic Neo'; 
-}
-.btn-login{
-  margin-left:20px;
-}
-.content-title-1{
-  padding-top:24px;
-  font-size:25px;
-}
-.content-title-2{
-  font-size:55px;
-  font-weight:bold;
-}
-.content-title-3, .content-title-4{
-  font-size:17px;
-}
 
-.home-section{
-padding: 71px 0px;
-background:#ff496e;
-}
+
 
 
 </style>

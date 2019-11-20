@@ -2,7 +2,7 @@
     <div class="login-section text-center">
         <div class="container">
             
-          <div class="card-body login-wrap">  
+          <div class="login-wrap">  
             <h1>Magot 로그인</h1>
 
             <div class="login-form-group">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="login-form-group">
-                <router-link to="/passwordReset"><u>비밀번호를 잊어버리셨나요?</u></router-link>
+                <router-link to="/passwordReset"><u style="color:#888888; font-weight:500;">비밀번호를 잊어버리셨나요?</u></router-link>
 
                 <p id="errResponse">{{response}}</p>
             </div>
@@ -24,7 +24,7 @@
             </div>
             
             <div class="login-form-group">
-                <p>아직 계정이 없으신가요?
+                <p id="signup-recommand" style="">아직 계정이 없으신가요?
                     <router-link to="/signup" class="join-link"><u>회원가입</u></router-link>
                 </p>
             </div>
@@ -79,16 +79,15 @@ export default {
 
 <style>
 
-.card-body{
-    border-radius: 5px;
-}
 .login-wrap{
+    padding-top:45px;
+    border-radius: 5px;
     border:1px solid #D2D2D7;
-    box-shadow: 2px 2px 2px 2px #D2D2D7;
+    box-shadow: 3px 3px 4px 0px #D2D2D7;
     max-width:600px;
     min-height:630px;
     margin: 0 auto;
-    background-color:#f5f6f7;
+    background-color:#ffffff;
 }
 .login-form-group{
     margin-bottom:40px;
@@ -102,7 +101,6 @@ export default {
 }
 
 .login-section h1{
-    margin-top:10px;
     margin-bottom:45px;
     font-size:55px;
     font-weight:bold;
@@ -123,5 +121,9 @@ export default {
 #errResponse{
     color:#ff496e;
     margin-top:20px;
+}
+
+.signup-recommand{
+    color:#0f0f0f;font-size:17px;
 }
 </style>

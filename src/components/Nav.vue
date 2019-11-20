@@ -9,10 +9,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item about-us">
                   <a class="nav-link js-scroll-trigger" href="/about">About Us</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item company">
                   <a class="nav-link js-scroll-trigger" href="/company">회사소개</a>
                 </li>
                 <li class="nav-item">
@@ -32,5 +32,7 @@ export default {
 </script>
 
 <style>
-
+.about-us, .company{
+  width:200px;
+}
 </style>

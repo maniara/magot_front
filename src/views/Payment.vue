@@ -123,7 +123,7 @@
             
             <span slot="body">
 
-            <form class="was-validated" @submit.prevent="taxSubmit">
+            <form class="was-validated payment-modal-body" @submit.prevent="taxSubmit">
                 <div class="form-group row">
                 <label class="col-sm-5 control-label">신청자 이름</label>
                 <div class="col-sm-7">

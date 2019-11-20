@@ -1,3 +1,8 @@
+*{
+    font-family: 'Apple SD Gothic Neo';
+    letter-spacing: -0.5px !important;
+}
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -24,14 +29,14 @@ color: #000;
 
 input[type="text"], input[type="email"], input[type="password"]{
 /*max-width:300px;*/
-max-width:300px;
+max-width:305px;
 height:45px;
 font-size:17px;
 }
 
 
 .btn-file{
-    background-color:#bbb !important;
+    background-color:#ff496e !important;
     width:115px !important;
 }
 
@@ -41,7 +46,6 @@ font-size:17px;
     height:40px;
     padding:0.65rem 1.6rem !important;
     font-weight:bold;
-    letter-spacing: 0;
     font-size:15px;
     background-color:#1E3444;
 }
@@ -77,6 +81,29 @@ font-weight:600;
     border-color: #ff496e;
 }
 
+/* Home CSS */
+.btn-login{
+margin-left:20px;
+}
+.content-title-1{
+padding-top:24px;
+font-size:25px;
+}
+.content-title-2{
+font-size:55px;
+font-weight:bold;
+}
+.content-title-3, .content-title-4{
+font-size:17px;
+font-weight:500;
+}
+
+.home-section{
+padding: 71px 0px;
+background:#ff496e;
+}
+
+
 
 /* Signup CSS */
 .signup-section{
@@ -104,10 +131,11 @@ margin-top:95px;
 .form-check-label{
     font-size:17px;
     margin-left:25px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .input-btn-click{
+padding: 0 30px;
 cursor:pointer;
 }
 
@@ -155,6 +183,9 @@ padding-left:10px;
 @media (min-width:576px){
     .control-label{
         display: inline;
+    }
+    label{
+        display: inline-block !important;
     }
 }
 
@@ -239,6 +270,14 @@ padding-left:10px;
   }
 }
 
+.payment-modal-body{
+  max-width:545px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:20px;
+  margin-bottom:0;
+}
+
 /* AccountInfo  CSS */
 .account-section{
     margin-top:95px;
@@ -283,4 +322,38 @@ padding-left:10px;
       margin: 0 auto;
   }
 
+  /* Admin4 CSS */
+
+.account > .card-text{
+    font-size:17px;
+    margin-bottom:5px;
+}
+.coupon{
+    margin-bottom:10px;
+}
+
+.sub-title-3{
+    color:#888888;
+    font-size:15px;
+    margin-left:10px;
+}
+.coupon-modal .modal-header{
+    background-color:#1E3444 !important;
+}
+.coupon-modal-body{
+    max-width:1000px;
+    margin-left: 20px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top:20px;
+    margin-bottom:0;
+}
+
+.coupon-title, .coupon-content{
+    max-width:600px !important;
+}
+
+.coupon-condition > .price label{
+    padding-right:25px;
+} 
 

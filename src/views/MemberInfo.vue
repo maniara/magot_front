@@ -2,29 +2,21 @@
   <div class="memberInfo-section">
       <div class="container">
 
-            <form class="memberInfo-form was-validated" @submit.prevent="memberInfoSubmit">
+            <form class="memberInfo-form" @submit.prevent="memberInfoSubmit">
               
               <h1>Magot 판매자 정보 입력하기</h1>
               
               <!-- 업체명 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">업체명</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;상호명</label>
                 <div class="col-sm">
-                  <input type="text" class="form-control" id="company-name" v-model="memberInfo.company_name" placeholder="업체명 입력" required>
-                </div>
-              </div>
-
-              <!-- 대표자명 -->
-              <div class="form-group row">
-                <label class="col-sm-5 control-label">대표자명</label>
-                <div class="col-sm">
-                  <input type="text" class="form-control" id="member-name" v-model="memberInfo.company_owner" placeholder="대표자명 입력" required>
+                  <input type="text" class="form-control" id="company-name" v-model="memberInfo.company_name" placeholder="사업자등록증 상호명 입력" required>
                 </div>
               </div>
 
               <!-- 사업자등록번호 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">사업자등록번호</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;사업자등록번호</label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="company-number" v-model="memberInfo.company_number" placeholder="사업자등록번호 입력" required>
                 </div>
@@ -32,17 +24,27 @@
 
               <!-- 사업자등록증 사본 첨부 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">사업자등록증 사본 첨부</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;사업자등록증 사본 첨부</label>
                 <div class="col-sm">
-                  <input type="file" ref="file" class="business-file-input" id="business-file-input" style="display:none" @change="onFileChange('business-file-input')">
+                  <input type="file" ref="file" class="business-file-input" id="business-file-input" style="display:none" @change="onFileChange">
                   <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
                   <span class="filename">{{memberInfo.business_file}}</span>
                 </div>
               </div>
 
+              <!-- 대표자명 -->
+              <div class="form-group row">
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;대표자명</label>
+                <div class="col-sm">
+                  <input type="text" class="form-control" id="member-name" v-model="memberInfo.company_owner" placeholder="사업자등록증 대표자명 입력" required>
+                </div>
+              </div>
+              
+             <hr style="margin-bottom:30px;">
+
               <!-- 연락처 1 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">연락처 </label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;회사 연락처 </label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="company-phone-1" v-model="memberInfo.company_phone1" placeholder="연락처 입력" required>
                 </div>
@@ -50,7 +52,7 @@
 
               <!-- 연락처 2 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">비상 연락처</label>
+                <label class="col-sm-5 control-label">개인 연락처</label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="company-phone-2" v-model="memberInfo.company_phone2" placeholder="연락처 입력 (선택)">
                 </div>
@@ -58,7 +60,7 @@
 
               <!-- 매장명 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">매장명</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장명</label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="store-name" v-model="memberInfo.store_name" placeholder="매장명 입력" required>
                 </div>
@@ -66,11 +68,11 @@
               
               <!-- 매장 우편번호 찾기 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">매장 주소</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 주소</label>
                 <div class="input-group col-sm">
-                    <input type="text" class="form-control" id="store-postcode" placeholder="우편번호" required>
+                    <input type="text" class="form-control" id="store-postcode" v-bind:value="memberInfo.store_postcode" placeholder="우편번호" required>
                     <div class="input-group-append">
-                      <span class="input-group-text input-btn-click" @click="execDaumPostcode('store-postcode', 'store-address','store-detail-address')">우편번호 찾기</span>
+                      <span class="input-group-text input-btn-click" @click="execDaumPostcode('store-postcode', 'store-address','store-detail-address')">검색</span>
                     </div>
                 </div>
               </div>
@@ -93,7 +95,7 @@
 
               <!-- 매장 로고 -->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">매장 로고</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 로고</label>
                 <div class="col-sm">
                   <input type="file" ref="file" style="display:none" @change="onFileChange">
                   <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
@@ -103,7 +105,7 @@
 
               <!-- 매장 사진-->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">매장 사진</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 사진</label>
                 <div class="col-sm">
                   <input type="file" ref="file" style="display:none" @change="onFileChange">
                   <button type="button" class="btn btn-file" @click="$refs.file.click()">파일 선택</button>
@@ -113,7 +115,7 @@
 
               <!-- 매장 검색 태그-->
               <div class="form-group row">
-                <label class="col-sm-5 control-label">매장 검색 태그</label>
+                <label class="col-sm-5 control-label"><span class="text-danger">*</span>&nbsp;매장 검색 태그</label>
                 <div class="col-sm">
                   <input type="text" class="form-control" id="store-tag" v-model="memberInfo.store_search_tag" placeholder="#태그입력" required>
                 </div>
@@ -173,8 +175,9 @@ export default {
   },
   methods: {
     onFileChange(e){
-      
+      //console.log(e.target).files[0];
       var fileName = e.target.files[0].name;
+
       this.memberInfo.business_file = fileName //파일명
   
     },
@@ -214,12 +217,14 @@ export default {
 
     async memberInfoSubmit(){
       
-      this.memberInfo.store_postcode = document.getElementById('store-postcode').value;
-      this.memberInfo.store_address = document.getElementById('store-address').value;
-      this.memberInfo.store_detail_address = document.getElementById('store-detail-address').value;
+      //this.memberInfo.store_postcode = document.getElementById('store-postcode').value;
+
+      //this.memberInfo.store_address = document.getElementById('store-address').value;
+      //this.memberInfo.store_detail_address = document.getElementById('store-detail-address').value;
 
       console.log('판매자 입력정보 출력: '+this.memberInfo); //판매자 입력정보 출력
       
+      /*
       var responseCode = await addMemberInfo({
         memberInfo: this.memberInfo
       })
@@ -236,6 +241,7 @@ export default {
         alert("Bad Request!!");
         return this.$router.push('memberInfo');
       }
+      */
       
     }
 

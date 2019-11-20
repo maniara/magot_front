@@ -86,12 +86,9 @@
 .modal-body {
   /*padding-left:50px;
   margin: 20px 0px 0px 0px;
+  max-width:width
   */
-  max-width:545px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:20px;
-  margin-bottom:0;
+  
 }
 
 .modal-footer{

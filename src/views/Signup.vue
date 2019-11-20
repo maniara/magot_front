@@ -13,7 +13,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="id-input" ref="id-input" @keyup="textInputCheck" v-model="id" placeholder="회원 ID" >
                         <div class="input-group-append">
-                          <span class="input-group-text input-btn-click" @click="idInputCheck">중복확인</span>
+                          <span class="input-group-text input-btn-click font-weight-bold" @click="idInputCheck">아이디 체크</span>
                         </div>
                     </div>
                     <label for="inputId" class="input-bottom-text" id="id-message" v-text="id_state"></label>    
@@ -41,12 +41,12 @@
                 <div class="form-group">
                   <input type="checkbox" class="check-input" id="checkbox-input" v-model="checked">
                   <p class="form-check-label">
-                    Magot 서비스의 <u>이용약관</u> 및 <u>개인정보처리방침</u>에 동의합니다.
+                    Magot 서비스의 <u class="font-weight-bold">이용약관</u> 및 <u class="font-weight-bold">개인정보처리방침</u>에 동의합니다.
                   </p>
                   <label for="inputCheckbox" class="input-bottom-text" id="checkbox-message" v-text="checkbox_state"></label>
                </div>
                <div class="form-group">
-                <button type="button" class="btn btn-default prev-btn" @click="signupMember">등록</button>
+                <button type="button" class="btn btn-default" @click="signupMember">등록</button>
                 <!--<router-link to="/memberInfo" class="btn next-btn">건너뛰기</router-link>-->
                 <br />
                 
@@ -73,10 +73,10 @@ export default {
       password_message: "",
       checked: false,
       id_state: "아이디를 입력해 주세요",
-      password_state: "문자,숫자,기호를 조합하여 8자 이상을 입력해 주세요",
+      password_state: "문자, 숫자, 기호를 조합하여 8자 이상을 입력해 주세요",
       password_confirm_state: "비밀번호를 한번 더 입력해 주세요",
       checkbox_state: "",
-      nickname_state: "문자,숫자,마침표 사용할 수 있습니다",
+      nickname_state: "문자, 숫자, 마침표 사용할 수 있습니다",
       securityFlag: false,
       defaultColor: "#ced4da",
       errorColor: "#ff496e",

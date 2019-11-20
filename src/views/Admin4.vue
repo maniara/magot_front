@@ -91,10 +91,10 @@
         </div>
 
          <!-- use the modal component, pass in the prop -->
-        <modal v-if="showModal" @close="showModal = false">
+        <modal v-if="showModal" @close="showModal = false" class="coupon-modal">
 
             <!-- modal header start -->
-            <h3 slot="header">
+            <h3 slot="header" style="text-align:left;">
             신규 혜택(쿠폰)등록
             <i class="closeModalBtn fa fa-times" aria-hidden="true" @click="showModal = false" style="float:right;"></i>
             </h3>
@@ -102,9 +102,9 @@
 
             <!-- modal body start -->
             
-            <span slot="body">
+            <span slot="body" style="max-width:100%;">
 
-            <form class="was-validated" @submit.prevent="couponSubmit">
+            <form class="was-validated coupon-modal-body" @submit.prevent="couponSubmit">
                 <div class="form-group row">
                 <label class="col-sm-3 control-label">제목</label>
                 <div class="col-sm-9">
@@ -119,39 +119,51 @@
                 </div>
                 </div>
 
-                <div class="form-group row">
-                <label class="col-sm-3 control-label">충전 금액 조건</label>
-                <div class="col-sm-9">
-                    <label>{{price}}</label ><button type="button" class="btn btn-file">변경하기</button>
+                <div class="form-group row coupon-condition">
+                <label class="col-sm-3 control-label">쿠폰 지급 조건</label>
+                <div class="col-sm-9 price">
+                    <label class="control-label">{{price}}원 이상</label ><button type="button" class="btn btn-file">변경하기</button>
                 </div>
                 </div>
 
-                <div class="form-group row">
-                <label class="col-sm-3 control-label">쿠폰 종류</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="1에서 100까지 입력 가능" required>
-                </div>
-                </div>
+                <div class="form-group coupon-kind">
+                    <div class="row">
+                        <label class="col-sm-3 control-label">쿠폰 종류</label>
+                        <div class="col-sm-9 form-inline">
+                            <label class="radio-inline">
+                                <input type="radio" value="option1"> 비율
+                            </label>
+                            <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="1에서 100까지 입력 가능" required>
+                        </div>
+                    </div>
+                    <div class="row coupon" style="margin-top:30px;">
+                        <label class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9 form-inline">
+                            <label class="radio-inline">
+                                <input type="radio" value="option1">&nbsp;&nbsp;정액
+                            </label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="1에서 100까지 입력 가능" required>
+                                <div class="input-group-addon">%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
 
                 <div class="form-group row">
-                <label class="col-sm-3 control-label"></label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" v-model="taxInfo.company_number"  placeholder="금액 입력 가능" required>
-                </div>
-                </div>
-
-
-                <div class="form-group row">
-                <label class="col-sm-3 control-label">혜택 기간 설정</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" v-model="taxInfo.company_name" placeholder="상호(법인명) 입력" required>
-                </div>
+                    <label class="col-sm-3 control-label">혜택 기간 설정</label>
+                    <div class="col-sm-9 from-inline">
+                        <div class="col-sm">
+                            <label class="control-label">시작일</label>
+                        </div>
+                        <input type="text" class="form-control" v-model="taxInfo.company_name" placeholder="상호(법인명) 입력" required>
+                    </div>
                 </div>
 
                 <div class="modal-footer-form row">
-                <div class="col-sm text-center">
-                    <button type="submit" class="btn">등록하기</button>       
-                </div>               
+                    <div class="col-sm text-center">
+                        <button type="submit" class="btn">등록하기</button>       
+                    </div>               
                 </div>
 
             </form> 
@@ -197,7 +209,7 @@ export default {
                 company_address : '', //회사 주소
                 company_detail_address : '', //회사 상세주소
             },
-            price : "10,000원 이상"
+            price : "10,000"
         }
     },
     methods:{
@@ -212,30 +224,7 @@ export default {
 </script>
 
 <style>
-.account > .card-text{
-    font-size:17px;
-    margin-bottom:5px;
-}
-.coupon{
-    margin-bottom:10px;
-}
 
-.sub-title-3{
-    color:#888888;
-    font-size:15px;
-    margin-left:10px;
-}
 
-.modal-header{
-    background-color:#1E3444;
-}
-
-.modal-body{
-    max-width:1000px;
-}
-
-.coupon-title, .coupon-content{
-    max-width:600px !important;
-}
 
 </style>
